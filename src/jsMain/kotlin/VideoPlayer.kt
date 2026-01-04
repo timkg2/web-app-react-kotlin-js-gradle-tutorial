@@ -36,8 +36,9 @@ val VideoPlayer = FC<VideoPlayerProps> { props ->
                 +"Mark as unwatched"
             }
         }
-        img {
-            src = "https://placecats.com/640/360"
+        ReactPlayer {
+            url = props.video.videoUrl
+            controls = true
         }
     }
 }
