@@ -1,7 +1,9 @@
 import kotlinx.browser.document
+import kotlinx.serialization.Serializable
 import react.create
 import react.dom.client.createRoot
 
+@Serializable
 data class Video(
     val id: Int,
     val title: String,
