@@ -7,7 +7,7 @@ import react.dom.html.ReactHTML.h3
 
 external interface VideoPlayerProps : Props {
     var video: Video
-    var onWatchedButtonPressed: (Video) -> Unit
+    var onToggleWatched: (Video) -> Unit
     var unwatchedVideo: Boolean
 }
 
@@ -27,7 +27,7 @@ val VideoPlayer = FC<VideoPlayerProps> { props ->
                 backgroundColor = if (props.unwatchedVideo) NamedColor.lightgreen else NamedColor.red
             }
             onClick = {
-                props.onWatchedButtonPressed(props.video)
+                props.onToggleWatched(props.video)
             }
             if (props.unwatchedVideo) {
                 +"Mark as watched"

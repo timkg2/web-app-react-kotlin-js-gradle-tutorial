@@ -39,11 +39,13 @@ val App = FC<Props> {
         }
     }
 
+    // "let" is a scope function - https://kotlinlang.org/docs/scope-functions.html
     currentVideo?.let { curr ->
         VideoPlayer {
             video = curr
             unwatchedVideo = curr in unwatchedVideos
-            onWatchedButtonPressed = {
+            onToggleWatched = {
+                // Kotlin defines "+" and "-" operators for collections - https://kotlinlang.org/docs/collection-plus-minus.html
                 if (video in unwatchedVideos) {
                     unwatchedVideos = unwatchedVideos - video
                     watchedVideos = watchedVideos + video
