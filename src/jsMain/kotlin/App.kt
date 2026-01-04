@@ -15,17 +15,27 @@ import react.dom.html.ReactHTML.p
 import react.dom.html.ReactHTML.img
 
 val App = FC<Props> {
+    var currentVideo: Video? by useState(null)
+
     h1 { +"KotlinConf Explorer" }
 
     div {
         h3 { +"Videos to watch" }
         VideoList {
             videos = unwatchedVideos
+            selectedVideo = currentVideo
+            onSelectVideo = { video ->
+                currentVideo = video
+            }
         }
 
         h3 { +"Videos watched" }
         VideoList {
             videos = watchedVideos
+            selectedVideo = currentVideo
+            onSelectVideo = { video ->
+                currentVideo = video
+            }
         }
     }
 
