@@ -1,18 +1,9 @@
-import kotlinx.coroutines.async
-import react.*
-import react.dom.*
-import kotlinx.browser.window
-import kotlinx.coroutines.*
-import kotlinx.serialization.decodeFromString
-import kotlinx.serialization.json.Json
-import emotion.react.css
-import csstype.Position
-import csstype.px
+import react.FC
+import react.Props
+import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.h1
 import react.dom.html.ReactHTML.h3
-import react.dom.html.ReactHTML.div
-import react.dom.html.ReactHTML.p
-import react.dom.html.ReactHTML.img
+import react.useState
 
 val App = FC<Props> {
     // "by" creates a delegated property - https://kotlinlang.org/docs/delegated-properties.html
